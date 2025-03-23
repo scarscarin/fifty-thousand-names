@@ -1,0 +1,134 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "valnera-variable", sans-serif;
+    font-variation-settings: "DSTN" 0, "ROTN" 0, "wght" 400;}
+
+b {
+    font-variation-settings: "DSTN" 0, "ROTN" 0, "wght" 800;
+}
+
+h1 {
+    font-family: "valnera-monster-variable", sans-serif;
+    font-variation-settings: "DSTN" 0, "ROTN" 0;
+}
+  
+  #grid {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #details-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    max-height: 90%;
+    overflow-y: auto;
+  
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  #details-display h1 {
+    background: rgba(255,255,255,0.8);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 10px auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    text-align: center;
+  }
+
+  #details-display p {
+    background: rgba(255,255,255,0.8);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 10px auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    text-align: left;
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 769px) {
+    #details-display {
+      max-width: 60%;
+      width: 100%;
+      font-size: 3rem;
+    }
+    #details-display p {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+  }
+  
+  /* Mobile layout */
+  @media (max-width: 768px) {
+    #details-display {
+      width: 95%;
+      max-width: 95%;
+    }
+    #details-display p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+  }
+  
+
+  .grid-cell {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-cell {
+      border: none;
+      border-radius: 50%;
+    }
+  }
+
+  #intro-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 90%;           
+    max-width: 600px;     
+    font-size: 2rem;
+    font-family: "valnera-variable", sans-serif;
+    text-align: left;      
+    pointer-events: none;
+    user-select: none;
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+  
+  #intro-message p {
+    margin: 0;
+  }
+  
+
+.fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
