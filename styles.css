@@ -110,7 +110,7 @@ h1 {
     max-width: 600px;     
     font-size: 2rem;
     font-family: "valnera-variable", sans-serif;
-    text-align: left;      
+    text-align: justify;      
     pointer-events: none;
     user-select: none;
     line-height: 1.5;
