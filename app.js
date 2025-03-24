@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const introText = "As of March 2025, since October 7th 2023, there are more than 50,000 martyrs buried in Gaza. Every number is a name to be read out loud.";
+    const introText = "As of March 2025, more than 50,000 martyrs have been killed in Gaza. Every number is a person. Every person a name.";
     
     typeIntro(introText, "typing-text", () => {
       loadDataAndStart();
