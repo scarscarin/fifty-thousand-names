@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function loadDataAndStart() {
-    const datasetUrl = "https://data.techforpalestine.org/api/v2/killed-in-gaza.json";
+    const datasetUrl = "https://data.techforpalestine.org/api/v2/killed-in-gaza.json"; // json with dataset
   
     fetch(datasetUrl)
       .then(response => {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sorted = sortDatasetByDOB(data);
         createGrid(data);
   
-        // Fade out intro
+        // fade out intro
         const intro = document.getElementById("intro-message");
         if (intro) {
           intro.classList.add("fade-out");
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => {
         const el = document.getElementById("typing-text");
-        if (el) el.textContent = "Failed to load data.";
+        if (el) el.textContent = "Failed to load data. Please reach out to studio@leoscarin.com.";
         console.error(err);
       });
   }
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
   
-    // Detect mobile
+    // detects mobile
     const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   
     data.forEach((victim, index) => {
@@ -133,8 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return age + 1; // age they would be turning on birthday this year
   }
   
-  
-
   function displayDetails(victim) {
     const displayName = victim.name;
     const textName = victim.en_name || victim.name;
@@ -170,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let birthdayMsg = "";
 
       if (today >= birthdayThisYear) {
-        // Birthday already happened.
+        // birthday already happened.
         const diffDays = Math.floor((today - birthdayThisYear) / (1000 * 60 * 60 * 24));
         if (diffDays < 30) {
           if (diffDays < 7) {
@@ -188,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
           message += `<p>${capitalize(pronoun)} would have just celebrated ${possessive} birthday on ${formatBirthday(birthdayThisYear)} (${birthdayMsg}).</p>`;
         }
       } else {
-        // Birthday is upcoming.
+        // birthday upcoming.
         const diffDays = Math.floor((birthdayThisYear - today) / (1000 * 60 * 60 * 24));
         if (diffDays < 30) {
           if (diffDays < 7) {
@@ -211,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
       
-      const foundationDate = new Date("1948-05-14");
+      const foundationDate = new Date("1948-05-14"); // foundation date of the state of Israel
       if (dob < foundationDate) {
         const diff = calculateDateDifference(dob, foundationDate);
         const diffString = formatDateDiff(diff);
@@ -288,5 +286,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return "th";
   }
 
-  
+
+// This code was as tough to make as it was sad to digest.
+// I'm thinking of all the IDF data analysts. 
+// All their statisticians. 
+// All their specialists handling this amount of names.
+// How do they read the birthdays and not break into tears?
+
+// Dehumanisation happens, too, when a name becomes a number;
+// when a civilian victim becomes the margin of error of some AI-powered weapon;
+// not only when crimes are denied, but *especially* when they are normalised.
+// I don't want to have to do a website like this, ever again.
+
+// Leo
   
